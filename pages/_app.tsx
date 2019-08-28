@@ -4,7 +4,7 @@ import '../sass/main.scss';
 const App: React.FunctionComponent = () => (
     <div>
       <Header />
-      <p>Hello Next.js</p>
+      <p>Hello Zeit</p>
     </div>
   );
   
