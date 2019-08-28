@@ -1,9 +1,9 @@
-import Example from '../components/Example';
+import Header from '../components/Header';
 import '../sass/main.scss';
 
 const App: React.FunctionComponent = () => (
     <div>
-      <Example />
+      <Header />
       <p>Hello Next.js</p>
     </div>
   );

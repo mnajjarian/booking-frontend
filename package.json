@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./setupTests.js"
+    ]
+  },
   "scripts": {
     "dev": "next",
     "build": "build next",
