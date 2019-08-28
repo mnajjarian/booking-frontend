@@ -12,4 +12,16 @@ jobs:
       - run: yarn lint
       - deploy:
             name: deploy to Zeit
-            command: now
+            command: |
+            if [ "${CIRCLE_BRANCH}" == "production" ]; then
+              now build -t ${NOW_TOKEN} -n=circleci-deployment --static
+              now -t ${NOW_TOKEN} alias circleci-deployment-production.now.sh
+            elif [ "${CIRCLE_BRANCH}" == "development" ]; then
+              now build -t ${NOW_TOKEN} -n=circleci-deployment --static
+              now -t ${NOW_TOKEN} alias circleci-deployment-alpha.now.sh
+            elif [ "${CIRCLE_BRANCH}" == "master" ]; then
+              now build -t ${NOW_TOKEN} -n=circleci-deployment --static
+              now -t ${NOW_TOKEN} alias circleci-deployment-beta.now.sh
+            else
+              echo "This failed miserably!"
+            fi
