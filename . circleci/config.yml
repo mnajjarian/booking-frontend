@@ -2,15 +2,11 @@ version: 2
 jobs:
   build:
     docker:
-      - image: debian:stretch
-
+      - image: circleci/node:10.16.0
+        environment:
+          SKIP_PREFLIGHT_CHECK: true
     steps:
       - checkout
-
-      - run:
-          name: Greeting
-          command: echo Hello, world.
-
-      - run:
-          name: Print the Current Time
-          command: date
+      - run: yarn install
+      - run: yarn test
+      - run: yarn lint
