@@ -1,9 +1,17 @@
 
 .header {
-    display: flex;
-    align-items: center;
-    background-color: rgb(136, 69, 202);
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 2px 20px 0 var(--subtle);
+    color: var(--text-color);
+    //
 
+    
+    &__nav {
+        display: flex;
+        align-items: center;
+        background-color: linear-gradient(to right, var(--top1), var(--top2));
+    }
     &__logo {
         margin-left: 20px;
         padding: 16px;
@@ -14,12 +22,11 @@
         justify-content: space-between;
         align-items: center;
         list-style: none;
-
         a {
             text-decoration: none;
+            color: var(--text-color);
             &:hover {
-                color: black;
-
+                color: var(--code-comment);
             }
         }
         li {
@@ -29,8 +36,38 @@
            
         }
     }
-    &__avatar {
+    &__right {
         margin-left: auto;
-        margin-right: 8px;
+        margin-right: 16px;
+        height: 48px;
+        width: 48px;
+        margin-right: 40px;
+        cursor: pointer;
+        &--log {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            letter-spacing: .025rem;
+            padding: 10px;
+        }
+
+        img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            padding: 4px;
+            border-radius: 50%;
+        }
     }
+    &__checkbox {
+        width: 100%;
+        input[type=checkbox] {
+            display: inline;
+        }
+    }
+
+    
 }

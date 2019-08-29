@@ -1,0 +1,13 @@
+.button {
+    margin-top: 10px;
+    border-radius: 8px;
+    color: var(--green3);
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border: 0;
+    box-shadow: 0 0 10px var(--subtle);
+    background-image: linear-gradient(to bottom, var(--bg), var(--bg4));
+    transition: transform 0.15s cubic-bezier(0, 1.8, 1, 1.8);
+    outline: none;
+    cursor: pointer;
+}
